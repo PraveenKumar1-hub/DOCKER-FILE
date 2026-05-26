@@ -16,7 +16,7 @@ pipeline {
                         // Image ko apne username ke sath tag karna zaroori hai
                         def myImage = docker.build("pruuuu25/my-test-app:latest")
                         
-                        echo 'Pushing image to Docker Hub...'
+                        echo 'Pushing image to Docker Hub...'     
                         myImage.push()
                     }
                 }

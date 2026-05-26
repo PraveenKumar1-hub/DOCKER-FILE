@@ -4,7 +4,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Yahan apni repo ka link daalo
-                git branch: 'main', url: 'https://github.com/PraveenKumar1-hub/DOCKER-FILE.git'
+                git branch: 'main', url: 'https://github.com/PraveenKumar1-hub/MY-FIRST-CI-CD-PIPELINE.git'
             }
         }
         stage('Docker Build') {

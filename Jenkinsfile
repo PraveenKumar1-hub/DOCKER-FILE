@@ -5,8 +5,6 @@ pipeline {
             steps {
                 // Yahan apni repo ka link daalo
                 git branch: 'main', url: 'https://github.com/PraveenKumar1-hub/DOCKER-FILE.git'
-
-'
             }
         }
         stage('Docker Build') {

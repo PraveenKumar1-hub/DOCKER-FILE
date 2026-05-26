@@ -3,16 +3,22 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                // Yahan apni repo ka link daalo
-                git branch: 'main', url: 'https://github.com/PraveenKumar1-hub/DOCKER-FILE.git'
+                checkout scm
             }
         }
-        stage('Docker Build') {
+        stage('Docker Build & Push') {
             steps {
                 script {
-                    echo 'Building image...'
-                    // Ye command check karegi ki Docker image ban rahi hai ya nahi
-                    sh 'docker build -t my-test-app .'
+                    // 'docker-hub-credentials' wahi ID hai jo aapne Step 1 mein rakhi thi
+                    docker.withRegistry('https://index.docker.io/v1/', 'docker-hub-credentials') {
+                        
+                        echo 'Building image...'
+                        // Image ko apne username ke sath tag karna zaroori hai
+                        def myImage = docker.build("pruuuu25/my-test-app:latest")
+                        
+                        echo 'Pushing image to Docker Hub...'
+                        myImage.push()
+                    }
                 }
             }
         }

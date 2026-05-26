@@ -8,3 +8,4 @@ WORKDIR /app
 COPY . .
 # Ek simple command jo container chalne par print karegi
 CMD ["echo", "Hello, DevOps Pipeline is working!"]     
+  

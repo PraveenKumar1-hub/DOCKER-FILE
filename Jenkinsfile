@@ -6,7 +6,7 @@ pipeline {
                 checkout scm
             }
         }
-        stage('Docker Build & Push') {
+        stage('Docker Build & Push') {  
             steps {
                 script {
                     // 'docker-hub-credentials' wahi ID hai jo aapne Step 1 mein rakhi thi
